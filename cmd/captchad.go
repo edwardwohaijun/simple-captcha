@@ -37,17 +37,8 @@ func main() {
 		isBase64, _ := strconv.ParseBool(req.URL.Query().Get("base64"))
 		if isBase64 {
 			captchaText, _, captchaBase64, _ := captcha.New(true)
-			fmt.Printf("text and base64string: %s, \n%s\n", captchaText, captchaBase64)
-			jsonStr, err := json.Marshal(jsonResponse{captchaText, captchaBase64})
-			if err != nil {
-				log.Println("json encoding error: ", err)
-				w.WriteHeader(http.StatusInternalServerError)
-				return
-			}
 			w.Header().Set("Content-Type", "application/json")
-			w.WriteHeader(http.StatusOK)
-			json.NewEncoder(w).Encode(jsonStr)
-			fmt.Println("captchaText: ", captchaText)
+			json.NewEncoder(w).Encode(jsonResponse{captchaText, captchaBase64})
 			return
 		}
 
