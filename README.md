@@ -2,9 +2,9 @@
 A simple captcha generation lib and server app written in Golang. I didn't do any fancy transformations or distortions to the generated text.
 Just randomly choose different font and size for each character, then a rotation within ±20°.
 
-![simple-captcha sample1](https://github.com/edwardwohaijun/simple-captcha/sample1.png)
+![simple-captcha sample1](https://github.com/edwardwohaijun/simple-captcha/blob/master/sample1.png)
 
-![simple-captcha sample2](https://github.com/edwardwohaijun/simple-captcha/sample2.png)
+![simple-captcha sample2](https://github.com/edwardwohaijun/simple-captcha/blob/master/sample2.png)
 
 # Prerequisites
 Go (>= 1.6)
